@@ -74,8 +74,10 @@ if __name__ == '__main__':
         
         if start_flag:
             if cfg.wheel == 0:
-                hw.motor_two_speed(0)
-                hw.motor_one_speed(0)
+                # hw.motor_two_speed(0)
+                # hw.motor_one_speed(0)
+                hw.motor_two_speed(-cfg.normal_speed_left)
+                hw.motor_one_speed(-cfg.normal_speed_right)
 
             if cfg.wheel == 1:   #left turn
                 hw.motor_two_speed(cfg.minturn_speed)
