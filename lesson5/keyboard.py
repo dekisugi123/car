@@ -17,7 +17,7 @@ def recording():
         if cfg.currentDir == '':
             cfg.currentDir = time.strftime('%Y-%m-%d')
             os.mkdir(cfg.outputDir+cfg.currentDir)
-            cfg.f=open(cfg.outputDir+cfg.currentDir+'/data.csv','w')
+            cfg.f=open(cfg.outputsDir+cfg.currentDir+'/data.csv','w')
         else:
             cfg.f=open(cfg.outputDir+cfg.currentDir+'/data.csv','a')
         cfg.fwriter = csv.writer(cfg.f)
@@ -95,8 +95,8 @@ if __name__ == '__main__':
                 cfg.wheel = 2
             if k == 84: 
                 hw.motor_one_speed(-cfg.normal_speed_right)
-                hw.motor_two_speed(-cfg.normal_speed_left)
-                cfg.wheel = 2
+                hw.motor_two_speed(-cfg.normal_speed_right)
+                cfg.wheel = 4
 
 
         
